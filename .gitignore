@@ -1,24 +1,30 @@
-# React Native
-node_modules/
-ios/Pods/
-ios/Podfile.lock
-android/.gradle/
-android/app/build/
-android/build/
-*.log
-*.lock
-*.tmp
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.expo/
-.expo-shared/
-
-# macOS
-.DS_Store
-
-# Rider
+# Flutter/Dart/Pub related
+.dart_tool/
+.flutter-plugins
+.packages
+.pub-cache/
+build/
 .idea/
+android/.gradle/
+android/captures/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/.symlinks
+ios/Pods
+macos/Pods
+macos/.symlinks
 *.iml
+*.lock
+*.log
+
+# Visual Studio Code/Rider/IntelliJ
+.vscode/
 *.ipr
 *.iws
+*.idea/
+*.iml
+
+# Others
+.env
+*.DS_Store
+*.swp
