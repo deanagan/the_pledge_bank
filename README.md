@@ -1,4 +1,4 @@
-# the_plant_collection
+# the_pledge_bank
 
 A new Flutter project.
 

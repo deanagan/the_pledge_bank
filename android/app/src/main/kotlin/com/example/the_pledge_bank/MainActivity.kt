@@ -1,4 +1,4 @@
-package com.example.the_plant_collection
+package com.example.the_pledge_bank
 
 import io.flutter.embedding.android.FlutterActivity
 
