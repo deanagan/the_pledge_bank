@@ -14,3 +14,13 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Project Prerequisites
+1. Install Android Studio (developing for Android)
+2. Download a virtual device
+3. 
+
+## Project Creations Steps and Notes
+1. To create the project, `flutter create the_pledge_bank`. Note the underscores. I realised hyphens aren't 
+allowed in package names
+2. To run simply `flutter run`
