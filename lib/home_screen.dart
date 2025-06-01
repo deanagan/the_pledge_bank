@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_pledge_bank/icons/pay_icon.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<Map<String, dynamic>> accounts = [
@@ -135,7 +136,7 @@ class BottomNavBar extends StatelessWidget {
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.account_balance), label: 'Accounts'),
-        BottomNavigationBarItem(icon: Icon(Icons.payment), label: 'Pay'),
+        BottomNavigationBarItem(icon: PayIcon(), label: 'Pay'),
         BottomNavigationBarItem(icon: Icon(Icons.credit_card), label: 'Cards'),
         BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Features'),
       ],
