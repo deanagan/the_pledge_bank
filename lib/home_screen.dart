@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:the_pledge_bank/icons/pay_icon.dart';
-
-import 'icons/pledge_money.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<Map<String, dynamic>> accounts = [
@@ -23,23 +20,6 @@ class HomeScreen extends StatelessWidget {
   ];
 
   HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavBar(),
-      body: SafeArea(
-        child: Column(
-          children: [
-            _buildTopBar(),
-            _buildTitle(),
-            Expanded(child: _buildAccountList()),
-            _buildTotalSection(),
-          ],
-        ),
-      ),
-    );
-  }
 
   Widget _buildTopBar() {
     return Padding(
@@ -125,23 +105,21 @@ class HomeScreen extends StatelessWidget {
       ],
     );
   }
-}
-
-class BottomNavBar extends StatelessWidget {
-  const BottomNavBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      selectedItemColor: Colors.black,
-      unselectedItemColor: Colors.grey,
-      items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.account_balance), label: 'Accounts'),
-        BottomNavigationBarItem(icon: PayIcon(), label: 'Pay'),
-        BottomNavigationBarItem(icon: PledgeMoneyIcon(size: 28, color: Colors.green), label: 'Pledge'),
-        BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Features'),
-      ],
+    return SafeArea(
+      child: Column(
+        children: [
+          _buildTopBar(),
+          _buildTitle(),
+          Expanded(child: _buildAccountList()),
+          _buildTotalSection(),
+        ],
+      ),
     );
   }
+
 }
+
+

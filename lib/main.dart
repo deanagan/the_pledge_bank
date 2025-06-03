@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'main_screen.dart';
 
 void main() {
   runApp(ThePledgeBankApp());
@@ -17,7 +17,7 @@ class ThePledgeBankApp extends StatelessWidget {
         primarySwatch: Colors.yellow,
         scaffoldBackgroundColor: Colors.yellow[100],
       ),
-      home: HomeScreen(),
+      home: MainScreen(),
     );
   }
 }
