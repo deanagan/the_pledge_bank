@@ -5,9 +5,9 @@ class PaySomeoneScreen extends StatelessWidget {
 
   final List<Map<String, String>> contacts = const [
     {'name': 'Stephen Curry', 'details': '123-456 7890 1234'},
-    {'name': 'Test Pty Ltd', 'details': 'TEST PAYMENT SYSTEMS\n1234 27537972412645'},
+    {'name': 'Silk Pty Ltd', 'details': 'TEST PAYMENT SYSTEMS\n1234 27537972412645'},
     {'name': 'Tony Parker', 'details': '012-556 2009 4918 1'},
-    {'name': 'Chase Centre', 'details': '334-342 9456 9432'},
+    {'name': 'The Chase Centre', 'details': '334-342 9456 9432'},
   ];
 
   @override
@@ -79,13 +79,14 @@ class PaySomeoneScreen extends StatelessWidget {
   Widget _buildContactList() {
     return ListView(
       children: [
+        // Laying this out manually for now
         _buildAlphaHeader('R'),
         _buildAlphaHeader('S'),
-        _buildContactItem('Shal Lawyers Associa', '062-293 1033 7288'),
-        _buildContactItem('SMS Pty Ltd', 'DEFT PAYMENT SYSTEMS\n96503 27437572432679'),
+        _buildContactItem(contacts[0]['name']!, contacts[0]['details']!),
+        _buildContactItem(contacts[1]['name']!, contacts[1]['details']!),
         _buildAlphaHeader('T'),
-        _buildContactItem('Teresita Alivio', '012-556 2009 4918 1'),
-        _buildContactItem('Top 1 Removals', '062-265 1156 3376'),
+        _buildContactItem(contacts[2]['name']!, contacts[2]['details']!),
+        _buildContactItem(contacts[3]['name']!, contacts[3]['details']!),
       ],
     );
   }
