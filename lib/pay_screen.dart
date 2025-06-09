@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_pledge_bank/pay_someone_screen.dart';
 
 class PayScreen extends StatelessWidget {
   const PayScreen({Key? key}) : super(key: key);
@@ -18,8 +19,22 @@ class PayScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 children: [
                   _buildPayOption(Icons.atm, 'Cardless Withdrawal & Deposit'),
-                  _buildPayOption(Icons.swap_horiz, 'Transfer between accounts'),
-                  _buildPayOption(Icons.person_outline, 'Pay someone'),
+                  _buildPayOption(
+                    Icons.swap_horiz,
+                    'Transfer between accounts',
+                  ),
+                  _buildPayOption(
+                    Icons.person_outline,
+                    'Pay someone',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PaySomeoneScreen(),
+                        ),
+                      );
+                    },
+                  ),
                   _buildPayOption(Icons.qr_code, 'BPAY'),
                   _buildPayOption(Icons.public, 'International money transfer'),
                 ],
@@ -43,7 +58,11 @@ class PayScreen extends StatelessWidget {
           ),
           const Text(
             'Pay',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
           IconButton(
             icon: const Icon(Icons.help_outline, color: Colors.white),
@@ -54,25 +73,28 @@ class PayScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPayOption(IconData icon, String title) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-      decoration: BoxDecoration(
-        color: Colors.grey[900],
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Row(
-        children: [
-          Icon(icon, color: Colors.white, size: 28),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Text(
-              title,
-              style: const TextStyle(color: Colors.white, fontSize: 16),
+  Widget _buildPayOption(IconData icon, String title, {VoidCallback? onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        decoration: BoxDecoration(
+          color: Colors.grey[900],
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          children: [
+            Icon(icon, color: Colors.white, size: 28),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Text(
+                title,
+                style: const TextStyle(color: Colors.white, fontSize: 16),
+              ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
