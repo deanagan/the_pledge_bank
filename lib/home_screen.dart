@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   final List<Map<String, dynamic>> accounts = [
     {
-      'name': 'Smart Access',
+      'name': 'Account 1',
       'balance': 5000.0,
       'available': 5000.0,
     },
     {
-      'name': 'Lydia\'s Travel Fund',
+      'name': 'Account 2',
       'balance': 2200.0,
       'available': 2200.0,
     },
     {
-      'name': 'Ultimate Awards',
+      'name': 'Account 3',
       'balance': 3000.0,
       'available': 3000.0,
     },
@@ -83,7 +83,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildTotalSection() {
     return Container(
-      color: Colors.yellow[700],
+      color: Colors.blue[700],
       padding: EdgeInsets.all(16),
       child: Column(
         children: [

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:the_pledge_bank/pay_screen.dart';
+import 'package:the_pledge_bank/trends_screen.dart';
 import 'home_screen.dart';
 //import 'pay_screen.dart';
 //import 'pledge_screen.dart';
 //import 'features_screen.dart';
 //import 'accounts_screen.dart';
-import 'package:the_pledge_bank/icons/pay_icon.dart';
+//import 'package:the_pledge_bank/icons/pay_icon.dart';
 
-import 'icons/pledge_money.dart';
+//import 'icons/pledge_money.dart';
+import 'icons/svg_nav_icon.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -24,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(), // temp
     PayScreen(), // temp
     HomeScreen(), // temp
-    HomeScreen(), // temp
+    TrendsScreen(), // temp
     //AccountsScreen(),
     //PayScreen(),
     //PledgeScreen(),
@@ -51,9 +53,12 @@ class _MainScreenState extends State<MainScreen> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.account_balance), label: 'Accounts'),
-          BottomNavigationBarItem(icon: PayIcon(), label: 'Pay'),
-          BottomNavigationBarItem(icon: PledgeMoneyIcon(size: 28, color: Colors.grey), label: 'Pledge'),
-          BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Features'),
+          BottomNavigationBarItem(icon: Icon(Icons.monetization_on), label: 'Pay'),
+          BottomNavigationBarItem(icon:
+          SvgNavIcon(assetName: 'assets/icons/pay.svg'),
+          //PledgeMoneyIcon(size: 28, color: Colors.grey),
+              label: 'Pledge'),
+          BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: 'Trends'),
 
         ],
       ),

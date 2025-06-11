@@ -14,8 +14,8 @@ class ThePledgeBankApp extends StatelessWidget {
       title: 'The Pledge Bank',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
-        scaffoldBackgroundColor: Colors.yellow[100],
+        primarySwatch: Colors.grey,
+        scaffoldBackgroundColor: Colors.blueAccent[100],
       ),
       home: MainScreen(),
     );
