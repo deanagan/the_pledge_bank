@@ -13,9 +13,9 @@ class TrendsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int barCount = 4;
-    double barWidth = 60;
-    double totalWidth = (barCount * barWidth) + 32; // Add some padding
-    double screenWidth = MediaQuery.of(context).size.width;
+    double barWidth = 20;
+    double totalWidth = (barCount * barWidth) + 20; // Add some padding
+    double screenWidth = MediaQuery.of(context).size.width - 20; // Accommodate labels
 
     // But never exceed screen width:
     double chartWidth = totalWidth < screenWidth ? screenWidth : totalWidth;
@@ -33,6 +33,14 @@ class TrendsScreen extends StatelessWidget {
                 alignment: BarChartAlignment.spaceEvenly,
                 maxY: 1000,
                 barTouchData: BarTouchData(enabled: true),
+                borderData: FlBorderData(
+                  show: true,
+                  border: const Border(
+                    left: BorderSide(color: Colors.black, width: 1),
+                    bottom: BorderSide(color: Colors.black, width: 1),
+                    right: BorderSide(color: Colors.black, width: 1),  // draw this manually
+                  ),
+                ),
                 titlesData: FlTitlesData(
                   bottomTitles: AxisTitles(
                     sideTitles: SideTitles(
