@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:the_pledge_bank/pay_screen.dart';
 import 'package:the_pledge_bank/trends_screen.dart';
-import 'home_screen.dart';
-//import 'pay_screen.dart';
-//import 'pledge_screen.dart';
-//import 'features_screen.dart';
-//import 'accounts_screen.dart';
-//import 'package:the_pledge_bank/icons/pay_icon.dart';
+import 'package:the_pledge_bank/home_screen.dart';
 
-//import 'icons/pledge_money.dart';
 import 'icons/svg_nav_icon.dart';
 
 class MainScreen extends StatefulWidget {
