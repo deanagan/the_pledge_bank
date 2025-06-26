@@ -1,25 +1,40 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  final List<Map<String, dynamic>> accounts = [
-    {
-      'name': 'Account 1',
-      'balance': 5000.0,
-      'available': 5000.0,
-    },
-    {
-      'name': 'Account 2',
-      'balance': 2200.0,
-      'available': 2200.0,
-    },
-    {
-      'name': 'Account 3',
-      'balance': 3000.0,
-      'available': 3000.0,
-    },
-  ];
+import 'data/api_service.dart';
 
+class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final ApiService _apiService = ApiService();
+  List<Map<String, dynamic>> _accounts = [];
+  bool _loading = true;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchAccounts();
+  }
+
+  Future<void> _fetchAccounts() async {
+    try {
+      final accounts = await _apiService.fetchAccounts();
+      setState(() {
+        _accounts = accounts;
+        _loading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _error = e.toString();
+        _loading = false;
+      });
+    }
+  }
 
   Widget _buildTopBar() {
     return Padding(
@@ -54,6 +69,12 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildAccountList() {
+    if (_loading) return const Center(child: CircularProgressIndicator());
+    if (_error != null) return Center(child: Text('Error: $_error'));
+    if (_accounts.isEmpty) return const Center(child: Text('No accounts found'));
+
+    var accounts = _accounts;
+
     return ListView.builder(
       padding: EdgeInsets.symmetric(horizontal: 16),
       itemCount: accounts.length,
